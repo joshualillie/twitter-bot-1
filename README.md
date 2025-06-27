@@ -1,4 +1,4 @@
-# twitter-bot-2
+# twitter-bot-1
 
 This is a very simple example of an X (Twitter) Bot that I threw together while sitting in a meeting (listening attentively, of course). It makes use of a couple of APIs - the Twitter API and the OpenAI API, combined with some old fashion RSS feeds. It's a pretty simple concept.
 
