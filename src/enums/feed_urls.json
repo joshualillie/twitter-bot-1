@@ -1,0 +1,22 @@
+{
+    "BBC News": "http://feeds.bbci.co.uk/news/rss.xml",
+    "CNN": "http://rss.cnn.com/rss/edition.rss",
+    "Reuters": "http://feeds.reuters.com/reuters/topNews",
+    "The New York Times": "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml",
+    "The Guardian": "https://www.theguardian.com/world/rss",
+    "NPR": "https://feeds.npr.org/1001/rss.xml",
+    "Al Jazeera English": "https://www.aljazeera.com/xml/rss/all.xml",
+    "Associated Press (AP)": "https://apnews.com/rss",
+    "Washington Post": "http://feeds.washingtonpost.com/rss/world",
+    "Bloomberg": "https://www.bloomberg.com/feed/podcast/etf-report.xml",
+    "Financial Times": "https://www.ft.com/?format=rss",
+    "ABC News": "https://abcnews.go.com/abcnews/topstories",
+    "CBS News": "https://www.cbsnews.com/latest/rss/main",
+    "NBC News": "http://feeds.nbcnews.com/nbcnews/public/news",
+    "Politico": "https://www.politico.com/rss/politicopicks.xml",
+    "Fox News": "http://feeds.foxnews.com/foxnews/latest",
+    "USA Today": "http://rssfeeds.usatoday.com/usatoday-NewsTopStories",
+    "TIME": "https://time.com/feed/",
+    "The Verge": "https://www.theverge.com/rss/index.xml",
+    "TechCrunch": "http://feeds.feedburner.com/TechCrunch/"
+  }
