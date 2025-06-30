@@ -29,10 +29,6 @@ jobs:
       - name: Run tests
         run: |
           pytest
-          
-      - name: Zip Lambda function
-        run: |
-          zip -r terraform/lambda_function.zip ./src
 
   # New Terraform job
   terraform:
@@ -51,6 +47,10 @@ jobs:
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: 1.8.0
+          
+      - name: Zip Lambda function
+        run: |
+          zip -r terraform/lambda_function.zip ./src
 
       - name: Terraform Init
         run: terraform init
