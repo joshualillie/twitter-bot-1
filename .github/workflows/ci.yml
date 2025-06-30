@@ -58,7 +58,7 @@ jobs:
         working-directory: terraform
 
       - name: Debug env vars
-        run: env | grep AWS
+        run: env
         working-directory: terraform
 
       - name: Terraform Plan
