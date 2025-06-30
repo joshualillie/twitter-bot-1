@@ -35,8 +35,6 @@ jobs:
     needs: build  # Optional: only run after Python job passes
 
     env:
-      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       AWS_REGION: "us-east-1"
       TF_TOKEN_app_terraform_io: ${{ secrets.TFE_TOKEN }}
 
@@ -51,46 +49,21 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
-        working-directory: terraform
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: "us-east-1"
-          TF_TOKEN_app_terraform_io: ${{ secrets.TFE_TOKEN }}
+        working-directory: te
 
       - name: Terraform Validate
         run: terraform validate
         working-directory: terraform
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: "us-east-1"
-          TF_TOKEN_app_terraform_io: ${{ secrets.TFE_TOKEN }}
 
       - name: Debug env vars
         run: env
         working-directory: terraform
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: "us-east-1"
-          TF_TOKEN_app_terraform_io: ${{ secrets.TFE_TOKEN }}
 
       - name: Terraform Plan
         run: terraform plan -out=tfplan
         working-directory: terraform
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: "us-east-1"
-          TF_TOKEN_app_terraform_io: ${{ secrets.TFE_TOKEN }}
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'
         run: terraform apply -auto-approve tfplan
         working-directory: terraform
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: "us-east-1"
-          TF_TOKEN_app_terraform_io: ${{ secrets.TFE_TOKEN }}
