@@ -33,7 +33,7 @@ jobs:
       - name: Zip Lambda function
         run: |
           cd src
-          zip -r ../lambda_function.zip .
+          zip -r lambda_function.zip src
 
   # New Terraform job
   terraform:
