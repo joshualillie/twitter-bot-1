@@ -29,6 +29,12 @@ jobs:
       - name: Run tests
         run: |
           pytest
+          
+      - name: Zip Lambda function
+        run: |
+          cd src
+          zip -r ../lambda_function.zip .
+
   # New Terraform job
   terraform:
     runs-on: ubuntu-latest
