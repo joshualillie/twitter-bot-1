@@ -22,7 +22,7 @@ def lambda_handler(event, context):
     print("Lambda was triggered!")
     return {
         'statusCode': 200,
-        'body': 'Hello from Lambda!'
+        'body': 'Hello from Twitter Bot!'
     }
 
 
