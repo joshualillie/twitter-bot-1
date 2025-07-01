@@ -25,7 +25,8 @@ resource "aws_iam_role_policy_attachment" "lambda_basic_exec" {
 }
 
 resource "aws_lambda_function" "my_lambda" {
-  function_name = "my_lambda_function"
+  function_name = "twitter_bot_lambda"
+  description   = "A Lambda function to run the Twitter bot"
   runtime       = "python3.11"
   role          = aws_iam_role.lambda_exec.arn
   handler       = "lambda_function.lambda_handler"
