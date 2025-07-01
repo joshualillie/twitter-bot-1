@@ -34,4 +34,16 @@ resource "aws_lambda_function" "my_lambda" {
   source_code_hash = filebase64sha256("lambda_function.zip")
 
   timeout = 10
+  environment {
+    variables = {
+      AWS_ACCESS_KEY_ID     = var.AWS_ACCESS_KEY_ID
+      AWS_SECRET_ACCESS_KEY = var.AWS_SECRET_ACCESS_KEY
+      BEARER_TOKEN          = var.BEARER_TOKEN
+      CONSUMER_KEY          = var.CONSUMER_KEY
+      CONSUMER_SECRET       = var.CONSUMER_SECRET
+      TWITTER_ACCESS_TOKEN  = var.TWITTER_ACCESS_TOKEN
+      TWITTER_ACCESS_TOKEN_SECRET = var.TWITTER_ACCESS_TOKEN_SECRET
+      OPEN_AI_API_KEY       = var.OPEN_AI_API_KEY
+    }
+  }
 }
