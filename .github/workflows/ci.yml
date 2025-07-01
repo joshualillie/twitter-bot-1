@@ -23,8 +23,10 @@ jobs:
 
       - name: Install dependencies
         run: |
+          mkdir -p build
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+          cp src/*.py build/
 
       - name: Run tests
         run: |
@@ -50,7 +52,7 @@ jobs:
           
       - name: Zip Lambda function
         run: |
-          cd src
+          cd build
           zip -r ../terraform/lambda_function.zip .
 
       - name: Terraform Init
