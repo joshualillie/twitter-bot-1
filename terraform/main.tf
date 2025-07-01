@@ -29,7 +29,7 @@ resource "aws_lambda_function" "my_lambda" {
   description   = "A Lambda function to run the Twitter bot"
   runtime       = "python3.11"
   role          = aws_iam_role.lambda_exec.arn
-  handler       = "lambda_function.lambda_handler"
+  handler       = "twitter_bot_lambda.lambda_handler"
   filename      = "lambda_function.zip"
   source_code_hash = filebase64sha256("lambda_function.zip")
 
