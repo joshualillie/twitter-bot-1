@@ -36,8 +36,6 @@ resource "aws_lambda_function" "my_lambda" {
   timeout = 10
   environment {
     variables = {
-      AWS_ACCESS_KEY_ID     = var.AWS_ACCESS_KEY_ID
-      AWS_SECRET_ACCESS_KEY = var.AWS_SECRET_ACCESS_KEY
       BEARER_TOKEN          = var.BEARER_TOKEN
       CONSUMER_KEY          = var.CONSUMER_KEY
       CONSUMER_SECRET       = var.CONSUMER_SECRET
