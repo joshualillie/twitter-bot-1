@@ -1,5 +1,3 @@
-variable "AWS_ACCESS_KEY_ID" {}
-variable "AWS_SECRET_ACCESS_KEY" {}
 variable "BEARER_TOKEN" {}
 variable "CONSUMER_KEY" {}
 variable "CONSUMER_SECRET" {}
