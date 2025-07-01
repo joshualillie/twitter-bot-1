@@ -65,7 +65,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: lambda-package
-          path: terraform/lambda_function.zip
+          path: terraform
 
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v3
