@@ -42,7 +42,7 @@ def get_random_greeting():
     return choice(greetings)
 
 def get_random_feed():
-    with open('src/enums/feed_urls.json', 'r') as f:
+    with open('enums/feed_urls.json', 'r') as f:
         feed_urls = json.load(f)
     news_source, feed_url = choice(list(feed_urls.items()))
     print("* {}'s feed is {}".format(news_source, feed_url))
