@@ -25,8 +25,13 @@ jobs:
         run: |
           mkdir -p build
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install -r requirements.txt -t build/
           cp src/*.py build/
+          
+      - name: Zip Lambda function
+        run: |
+          cd build
+          zip -r ../terraform/lambda_function.zip .
 
       - name: Run tests
         run: |
@@ -49,11 +54,6 @@ jobs:
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: 1.8.0
-          
-      - name: Zip Lambda function
-        run: |
-          cd build
-          zip -r ../terraform/lambda_function.zip .
 
       - name: Terraform Init
         run: terraform init
