@@ -18,30 +18,38 @@ api = tweepy.API(auth)
 min_sleep_time = 90 * 60
 max_sleep_time = 120 * 60
 
+def lambda_handler(event, context):
+    print("Lambda was triggered!")
+    return {
+        'statusCode': 200,
+        'body': 'Hello from Lambda!'
+    }
+
+
 # Upload image
 # media = api.media_upload("john-wayne-3.jpeg")
 
-while(True):
-    news_entry = get_random_feed()
-    print("news_entry.title")
-    print(news_entry.title)
-    random_msg = f"{get_generated_message(news_entry)} {news_entry.link}"
+# while(True):
+#     news_entry = get_random_feed()
+#     print("news_entry.title")
+#     print(news_entry.title)
+#     random_msg = f"{get_generated_message(news_entry)} {news_entry.link}"
 
-    print(random_msg)
+#     print(random_msg)
 
-    x_client = tweepy.Client(
-        consumer_key=consumer_key, 
-        consumer_secret=consumer_secret,
-        access_token=access_token, 
-        access_token_secret=access_token_secret
-    )
+#     x_client = tweepy.Client(
+#         consumer_key=consumer_key, 
+#         consumer_secret=consumer_secret,
+#         access_token=access_token, 
+#         access_token_secret=access_token_secret
+#     )
 
-    response = x_client.create_tweet(
-        text=random_msg,
-        # media_ids=[media.media_id]
-    )
+#     response = x_client.create_tweet(
+#         text=random_msg,
+#         # media_ids=[media.media_id]
+#     )
 
-    print(f"https://twitter.com/user/status/{response.data['id']}")
+#     print(f"https://twitter.com/user/status/{response.data['id']}")
 
-    sleep_time = int(uniform(min_sleep_time, max_sleep_time))
-    countdown(sleep_time)
+#     sleep_time = int(uniform(min_sleep_time, max_sleep_time))
+#     countdown(sleep_time)
