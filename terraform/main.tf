@@ -33,7 +33,7 @@ resource "aws_lambda_function" "my_lambda" {
   filename      = "lambda_function.zip"
   source_code_hash = filebase64sha256("lambda_function.zip")
 
-  timeout = 10
+  timeout = 60
   environment {
     variables = {
       BEARER_TOKEN          = var.BEARER_TOKEN
