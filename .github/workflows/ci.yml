@@ -50,7 +50,8 @@ jobs:
           
       - name: Zip Lambda function
         run: |
-          zip -r terraform/lambda_function.zip ./src/*
+          cd src
+          zip -r ../terraform/lambda_function.zip .
 
       - name: Terraform Init
         run: terraform init
