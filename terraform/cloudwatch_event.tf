@@ -1,7 +1,7 @@
 resource "aws_cloudwatch_event_rule" "lambda_schedule" {
   name                = "run-twitter-bot-schedule"
   description         = "Run Twitter bot on a schedule"
-  schedule_expression = "cron(0 */1.5 * * ? *)"  # every hour
+  schedule_expression = "rate(90 minutes)"
 }
 
 resource "aws_cloudwatch_event_target" "lambda_target" {
